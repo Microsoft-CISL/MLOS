@@ -13,10 +13,15 @@ From mlos.batch import compute_pool, storage_client, job, task, config
 cfg = config('config_path')
 comp_pool = ComputePool(cfg.compute_pool.local)
 
-job = Job(comp_pool, cfg)
+storage = storage_client(conn_string)
+
+job = Job(comp_pool, storage, cfg)
+
 job.start()
 
+job.status()
 
+df = storage.read_data()
 
 ```
 
@@ -56,7 +61,7 @@ class Job:
     """ 
  
 
-    def __init__(self, compute_pool, config): 
+    def __init__(self, compute_pool, storage_client, config): 
 
         """Initializes the job with id and compute pool 
 
@@ -207,7 +212,7 @@ class storage_client:
 
     def reset(self): 
 
-        """Reset the the directory structure to start a a fresh 
+        """Reset the the directory structure to start a fresh 
 
         """ 
 
@@ -221,10 +226,11 @@ Config:
         local.yaml
         azure_batch.yaml
         cloudlab.yaml
-        instance_type
+        instance_type/
 
     Task
-        driver/Dockerfile
+        driver
+            /Dockerfile
         worker
             /Dockerfile
             /dbms
@@ -234,7 +240,7 @@ Config:
  
 Container_scripts: 
 
-    """A directory structure to keep scripts related to benchmark setup or parse that's going to be used in dockerfile
+    """A directory structure to keep scripts related to benchmark setup or parsing that's going to be used in dockerfile
     """
     oltpbench.py
     postgres.py
