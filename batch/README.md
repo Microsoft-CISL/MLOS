@@ -134,7 +134,7 @@ class Job:
 
 class Task: 
 
-    """Represents a task that can be either driver or worker 
+    """Represents a task that can be either driver or worker or 
 
     """ 
 
@@ -235,16 +235,23 @@ Config:
             /Dockerfile
             /dbms
 
-    env.yaml # for env variables
+    Benchmarks
+        oltpbench
+            /workloads # contains workload descriptor files
+                tpcc.xml.template
+                tpch.xml.template
+
+    env.yaml # for env variables used in docker files
 
  
 Container_scripts: 
 
     """A directory structure to keep scripts related to benchmark setup or parsing that's going to be used in dockerfile
     """
+    # inital benchmark setup, generate and load data into dbms, run benchmark
     oltpbench.py
-    postgres.py
-    sync.py
+    
+    # parse performance stats from input and store it as csv or json that can easily readable in dataframe
     parse_result.py
 
 
