@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mlos_bench.optimizers package &mdash; MlosCore 0.1.dev1+g2d77d96 documentation</title>
+  <title>mlos_bench.optimizers package &mdash; MlosCore 0.1.dev1+g5287c24 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
@@ -14,7 +14,7 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/documentation_options.js?v=b65b3b23"></script>
+        <script src="../../_static/documentation_options.js?v=9bfd5c3c"></script>
         <script src="../../_static/doctools.js?v=888ff710"></script>
         <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -37,7 +37,7 @@
             MlosCore
           </a>
               <div class="version">
-                0.1.dev1+g2d77d96
+                0.1.dev1+g5287c24
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -50,13 +50,16 @@
               <p class="caption" role="heading"><span class="caption-text">Source Tree Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../source_tree_docs/index.html">MLOS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../source_tree_docs/mlos_bench/index.html">mlos-bench</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../source_tree_docs/mlos_core/index.html">mlos-core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source_tree_docs/mlos_bench/index.html">mlos-bench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../source_tree_docs/mlos_viz/index.html">mlos_viz</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Overview</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../overview.html">mlos-core API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">MLOS Package APIs Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html#mlos-core-api">mlos-core API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html#mlos-bench-api">mlos-bench API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html#mlos-viz-api">mlos-viz API</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
@@ -78,10 +81,11 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../mlos_viz/modules.html">mlos_viz</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://aka.ms/mlos-core/src">Github Source Tree</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/microsoft/MLOS">Github Source Tree</a></li>
 </ul>
 
         </div>
@@ -121,7 +125,11 @@
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">direction</span></code></dt><dd><p>The direction to optimize the target metric (e.g., min or max).</p>
+</dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_min</span></code></dt><dd><p>True if minimizing, False otherwise.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_iterations</span></code></dt><dd><p>The maximum number of iterations (trials) to run.</p>
 </dd>
 <dt><a class="reference internal" href="../../generated/mlos_bench.optimizers.MlosCoreOptimizer.html#mlos_bench.optimizers.MlosCoreOptimizer.name" title="mlos_bench.optimizers.MlosCoreOptimizer.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></dt><dd><p>The name of the optimizer.</p>
 </dd>
@@ -256,7 +264,11 @@ but with the values set to the next suggestion.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">direction</span></code></dt><dd><p>The direction to optimize the target metric (e.g., min or max).</p>
+</dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_min</span></code></dt><dd><p>True if minimizing, False otherwise.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_iterations</span></code></dt><dd><p>The maximum number of iterations (trials) to run.</p>
 </dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></dt><dd><p>The name of the optimizer.</p>
 </dd>
@@ -375,7 +387,11 @@ Explicit configs (partial or full) are possible using configuration files.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">direction</span></code></dt><dd><p>The direction to optimize the target metric (e.g., min or max).</p>
+</dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_min</span></code></dt><dd><p>True if minimizing, False otherwise.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_iterations</span></code></dt><dd><p>The maximum number of iterations (trials) to run.</p>
 </dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></dt><dd><p>The name of the optimizer.</p>
 </dd>
@@ -434,7 +450,11 @@ Explicit configs (partial or full) are possible using configuration files.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
+<dt><a class="reference internal" href="../../generated/mlos_bench.optimizers.Optimizer.html#mlos_bench.optimizers.Optimizer.direction" title="mlos_bench.optimizers.Optimizer.direction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">direction</span></code></a></dt><dd><p>The direction to optimize the target metric (e.g., min or max).</p>
+</dd>
 <dt><a class="reference internal" href="../../generated/mlos_bench.optimizers.Optimizer.html#mlos_bench.optimizers.Optimizer.is_min" title="mlos_bench.optimizers.Optimizer.is_min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_min</span></code></a></dt><dd><p>True if minimizing, False otherwise.</p>
+</dd>
+<dt><a class="reference internal" href="../../generated/mlos_bench.optimizers.Optimizer.html#mlos_bench.optimizers.Optimizer.max_iterations" title="mlos_bench.optimizers.Optimizer.max_iterations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max_iterations</span></code></a></dt><dd><p>The maximum number of iterations (trials) to run.</p>
 </dd>
 <dt><a class="reference internal" href="../../generated/mlos_bench.optimizers.Optimizer.html#mlos_bench.optimizers.Optimizer.name" title="mlos_bench.optimizers.Optimizer.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></dt><dd><p>The name of the optimizer.</p>
 </dd>
@@ -500,6 +520,12 @@ Explicit configs (partial or full) are possible using configuration files.</p>
 </dl>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="mlos_bench.optimizers.Optimizer.direction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direction</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#mlos_bench.optimizers.Optimizer.direction" title="Link to this definition">¶</a></dt>
+<dd><p>The direction to optimize the target metric (e.g., min or max).</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="mlos_bench.optimizers.Optimizer.get_best_observation">
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_best_observation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="mlos_bench.tunables.tunable_groups.html#mlos_bench.tunables.tunable_groups.TunableGroups" title="mlos_bench.tunables.tunable_groups.TunableGroups"><span class="pre">TunableGroups</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#mlos_bench.optimizers.Optimizer.get_best_observation" title="Link to this definition">¶</a></dt>
@@ -519,6 +545,14 @@ Explicit configs (partial or full) are possible using configuration files.</p>
 <dt class="sig sig-object py" id="mlos_bench.optimizers.Optimizer.is_min">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_min</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#mlos_bench.optimizers.Optimizer.is_min" title="Link to this definition">¶</a></dt>
 <dd><p>True if minimizing, False otherwise. Minimization is the default.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="mlos_bench.optimizers.Optimizer.max_iterations">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">max_iterations</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#mlos_bench.optimizers.Optimizer.max_iterations" title="Link to this definition">¶</a></dt>
+<dd><p>The maximum number of iterations (trials) to run.</p>
+<p>Note: this may or may not be the same as the number of configurations.
+See Also: Launcher.trial_config_repeat_count.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -627,8 +661,10 @@ but with the values set to the next suggestion.</p>
 <li class="toctree-l2"><a class="reference internal" href="mlos_bench.optimizers.base_optimizer.html#mlos_bench.optimizers.base_optimizer.Optimizer"><code class="docutils literal notranslate"><span class="pre">Optimizer</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.base_optimizer.html#mlos_bench.optimizers.base_optimizer.Optimizer.BASE_SUPPORTED_CONFIG_PROPS"><code class="docutils literal notranslate"><span class="pre">Optimizer.BASE_SUPPORTED_CONFIG_PROPS</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.base_optimizer.html#mlos_bench.optimizers.base_optimizer.Optimizer.bulk_register"><code class="docutils literal notranslate"><span class="pre">Optimizer.bulk_register()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.base_optimizer.html#mlos_bench.optimizers.base_optimizer.Optimizer.direction"><code class="docutils literal notranslate"><span class="pre">Optimizer.direction</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.base_optimizer.html#mlos_bench.optimizers.base_optimizer.Optimizer.get_best_observation"><code class="docutils literal notranslate"><span class="pre">Optimizer.get_best_observation()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.base_optimizer.html#mlos_bench.optimizers.base_optimizer.Optimizer.is_min"><code class="docutils literal notranslate"><span class="pre">Optimizer.is_min</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.base_optimizer.html#mlos_bench.optimizers.base_optimizer.Optimizer.max_iterations"><code class="docutils literal notranslate"><span class="pre">Optimizer.max_iterations</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.base_optimizer.html#mlos_bench.optimizers.base_optimizer.Optimizer.name"><code class="docutils literal notranslate"><span class="pre">Optimizer.name</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.base_optimizer.html#mlos_bench.optimizers.base_optimizer.Optimizer.not_converged"><code class="docutils literal notranslate"><span class="pre">Optimizer.not_converged()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.base_optimizer.html#mlos_bench.optimizers.base_optimizer.Optimizer.register"><code class="docutils literal notranslate"><span class="pre">Optimizer.register()</span></code></a></li>
@@ -643,6 +679,15 @@ but with the values set to the next suggestion.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="mlos_bench.optimizers.convert_configspace.html">mlos_bench.optimizers.convert_configspace module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mlos_bench.optimizers.convert_configspace.html#mlos_bench.optimizers.convert_configspace.TunableValueKind"><code class="docutils literal notranslate"><span class="pre">TunableValueKind</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.convert_configspace.html#mlos_bench.optimizers.convert_configspace.TunableValueKind.RANGE"><code class="docutils literal notranslate"><span class="pre">TunableValueKind.RANGE</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="mlos_bench.optimizers.convert_configspace.html#mlos_bench.optimizers.convert_configspace.TunableValueKind.SPECIAL"><code class="docutils literal notranslate"><span class="pre">TunableValueKind.SPECIAL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mlos_bench.optimizers.convert_configspace.html#mlos_bench.optimizers.convert_configspace.configspace_data_to_tunable_values"><code class="docutils literal notranslate"><span class="pre">configspace_data_to_tunable_values()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos_bench.optimizers.convert_configspace.html#mlos_bench.optimizers.convert_configspace.special_param_name_is_temp"><code class="docutils literal notranslate"><span class="pre">special_param_name_is_temp()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos_bench.optimizers.convert_configspace.html#mlos_bench.optimizers.convert_configspace.special_param_name_strip"><code class="docutils literal notranslate"><span class="pre">special_param_name_strip()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mlos_bench.optimizers.convert_configspace.html#mlos_bench.optimizers.convert_configspace.special_param_names"><code class="docutils literal notranslate"><span class="pre">special_param_names()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos_bench.optimizers.convert_configspace.html#mlos_bench.optimizers.convert_configspace.tunable_groups_to_configspace"><code class="docutils literal notranslate"><span class="pre">tunable_groups_to_configspace()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="mlos_bench.optimizers.convert_configspace.html#mlos_bench.optimizers.convert_configspace.tunable_values_to_configuration"><code class="docutils literal notranslate"><span class="pre">tunable_values_to_configuration()</span></code></a></li>
 </ul>
@@ -692,7 +737,7 @@ but with the values set to the next suggestion.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, GSL.</p>
+    <p>&#169; Copyright 2024, GSL.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
